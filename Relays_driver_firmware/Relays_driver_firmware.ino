@@ -3,6 +3,7 @@
 #include <JeeLib.h>                                                                      //https://github.com/jcw/jeelib - Tested with JeeLib 3/11/14
 ISR(WDT_vect) { Sleepy::watchdogEvent(); }                            // Attached JeeLib sleep function to Atmega328 watchdog -enables MCU to be put into sleep mode inbetween readings to reduce power consumption 
 #include "EmonLib.h" 
+const unsigned long BAUD_RATE= 38400;
 
 #include "EmonLib.h"  
 typedef struct { 
@@ -25,9 +26,8 @@ static byte stack[RF12_MAXDATA+4], top, sendLen, dest;           // RF variables
 static char cmd;
 static word value;                                               // Used to store serial input
 
-unsigned long last_relay_driver_check = 0;        
+unsigned long last_relay_driver_check = 0;         
 const long check_relays_interval = 2000; 
-
 
 const int relay_pins [] = {9,8,7,6};   // pin number of relays; 
 const byte number_of_relays=4;
@@ -35,7 +35,7 @@ word relays_status [] = {number_of_relays};
 
 void setup()
 {
-  Serial.begin(38400);
+  Serial.begin(BAUD_RATE);
     for(int index=0; index<number_of_relays; index++)
    {
        pinMode(relay_pins [index], OUTPUT); // Set the mode to OUTPUT
