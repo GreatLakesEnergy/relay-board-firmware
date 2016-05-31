@@ -1,0 +1,3 @@
+[submodule "RFM69Pi_schematics"]
+	path = RFM69Pi_schematics
+	url = https://github.com/Basazababo/relay-board-firmware.git
