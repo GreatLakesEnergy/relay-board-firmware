@@ -1,0 +1,3 @@
+[submodule "firmware_submodule"]
+	path = firmware_submodule
+	url = https://github.com/Basazababo/relay-board-firmware.git
