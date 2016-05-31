@@ -7,5 +7,5 @@ Follow this link to modify the bootloader https://wiki.openenergymonitor.org/ind
 
 Note: RFM69Pi can not be powered by 5v, it uses 3.3V
 
-5V Relay board that we are using trigger the relays when it gets 0V. It uses PNP trasnistors as switch.
+5V Relay board that we are using trigger the relays when it gets 0V. It uses PNP transistors as switch.
 
